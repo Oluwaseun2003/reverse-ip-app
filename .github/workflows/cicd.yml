@@ -16,7 +16,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: yourdockerusername/reverse-ip-app:latest
+          tags: oluwaseun1511/reverse-ip-app:latest
       - name: Update Helm Values
         run: |
           sed -i 's/image.tag: .*/image.tag: latest/' helm-chart/values.yaml

@@ -1,0 +1,13 @@
+app:
+  replicas: 1
+image:
+  repository: oluwaseun1511/reverse-ip-app
+  tag: latest
+service:
+  port: 8080
+db:
+  name: reverseip
+  storage: 1Gi
+  url: jdbc:postgresql://{{ .Release.Name }}-db-service:5432/reverseip
+  username: user
+  password: pass

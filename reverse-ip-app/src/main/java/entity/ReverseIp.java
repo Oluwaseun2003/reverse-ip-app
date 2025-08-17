@@ -13,17 +13,10 @@ import java.time.LocalDateTime;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 public class ReverseIp {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String ip;
     private LocalDateTime created_at;
-
-
-    public ReverseIp() {
-
-    }
 }

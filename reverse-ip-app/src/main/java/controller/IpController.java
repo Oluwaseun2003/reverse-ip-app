@@ -33,19 +33,19 @@ public class IpController {
             return  "Error: No IP found";
         }
 
-        String reverseIp = String.join(".", new StringBuilder(clientIp)
+        String reversedIp = String.join(".", new StringBuilder(clientIp)
                 .reverse().toString().split("\\."));
 
         ReverseIp entity = new ReverseIp();
-        entity.setIp(reverseIp);
+        entity.setIp(reversedIp);
         entity.setCreated_at(LocalDateTime.now());
         repository.save(entity);
 
         logger.info("{}", new Object() {
             public String client_Ip = clientIp;
-            public String reversed_ip = reverseIp;
+            public String reversed_ip = reversedIp;
         });
 
-        return reverseIp;
+        return reversedIp;
     }
 }
